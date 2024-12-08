@@ -5,7 +5,283 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiteraTeia - Grupo de Leitura</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #1A5F7A;
+            --secondary-color: #159895;
+            --accent-color: #57C5B6;
+            --text-color: #0C2D48;
+            --background-color: #F8F9FA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .book-section {
+            display: flex;
+            align-items: stretch;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-top: -100px;
+            z-index: 10;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .book-cover {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover img {
+            transform: scale(1.1);
+        }
+
+        .book-info {
+            flex: 2;
+            padding: 3rem;
+        }
+
+        .book-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        .book-info h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .past-books {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .past-book {
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .past-book:hover {
+            transform: scale(1.05);
+        }
+
+        .past-book img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        .review {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+        }
+
+        .reading-schedule {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .past-books {
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            .past-book {
+                width: calc(50% - 1rem);  /* Largura para 2 colunas com gap */
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem; 
+                word-wrap: break-word;
+                max-width: 100%;
+            }
+        
+            .hero p {
+                font-size: 1rem; 
+                max-width: 100%; 
+                margin: 0 auto; 
+            }
+
+            .book-section {
+                flex-direction: column;
+                margin-top: -50px;
+            }
+
+            .book-cover, .book-info {
+                flex: none;
+                width: 100%;
+            }
+
+            .book-cover:hover img {
+                transform: none;
+            }
+
+            .book-info {
+                padding: 1em;
+                text-align: justify; 
+            }
+
+            .book-info h2 {
+                padding: 0rem;
+                text-align: center;
+            }
+
+            .book-info .cta-button {
+                display: block; 
+                width: fit-content; 
+                margin-left: auto; 
+                margin-right: auto; 
+            }
+
+            .past-book {
+                width: 250px;  /* Aumentei de 200px para 250px */
+            }
+
+            .past-book img {
+                height: 400px;  /* Aumentei de 300px para 400px */
+                object-fit: cover;
+            }
+
+            footer {
+                text-align: center;
+                padding: 0.5rem;
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
 <body>
     <div class="hero">
         <div class="container">
@@ -13,7 +289,7 @@
             <p>Um grupo onde as histórias ganham vida, onde cada página nos transporta para mundos inexplorados e cada discussão nos transforma.</p>
         </div>
     </div>
-
+    
     <div class="container">
         <section class="book-section">
             <div class="book-cover">
@@ -22,24 +298,132 @@
             <div class="book-info">
                 <h2>O Lobo da Estepe</h2>
                 <p>Nosso primeiro mergulho literário, um romance que desafia os limites da existência humana e explora as profundezas da alma.</p>
-                
+               
                 <h3>Sinopse</h3>
                 <p>Harry Haller, um intelectual solitário, navega entre dois mundos: o da razão civilizada e o do instinto selvagem. Neste romance extraordinário de Hermann Hesse, somos convidados a explorar as contradições internas do ser humano, suas lutas íntimas e a busca por significado em um mundo que parece não compreendê-lo.</p>
-                
-                <a href="#" class="cta-button">Explorar o Livro</a>
+               
+                <a href="#" class="cta-button" id="current-book-btn">Explorar o Livro</a>
             </div>
         </section>
+
+        <h2 style="text-align: center; margin-bottom: 1rem; color: var(--primary-color);">Livros Anteriores</h2>
+        <div class="past-books">
+            <div class="past-book" data-title="1984" data-synopsis="Um clássico distópico de George Orwell que explora um futuro totalitário onde o governo controla todos os aspectos da vida humana." data-image="https://m.media-amazon.com/images/I/71kxa1-0mUL._SL1500_.jpg">
+                <img src="https://m.media-amazon.com/images/I/81l3pUGbT8L._SL1500_.jpg" alt="1984">
+                <p>1984</p>
+            </div>
+            <div class="past-book" data-title="Cem Anos de Solidão" data-synopsis="Uma obra-prima do realismo mágico de Gabriel García Márquez, narrando a saga da família Buendía em Macondo." data-image="https://m.media-amazon.com/images/I/81J1mMz6IjL._SL1500_.jpg">
+                <img src="https://m.media-amazon.com/images/I/817esPahlrL._SL1500_.jpg" alt="Cem Anos de Solidão">
+                <p>Cem Anos de Solidão</p>
+            </div>
+            <div class="past-book" data-title="O Pequeno Príncipe" data-synopsis="Uma fábula filosófica de Antoine de Saint-Exupéry sobre amor, perda e o verdadeiro significado da vida." data-image="https://m.media-amazon.com/images/I/81hFOvbPPfL._SL1500_.jpg">
+                <img src="https://m.media-amazon.com/images/I/81TmOZIXvzL._SL1500_.jpg" alt="O Pequeno Príncipe">
+                <p>O Pequeno Príncipe</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Book Details -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-book-title"></h2>
+            <img id="modal-book-image" src="" alt="" style="width: 200px; display: block; margin: 1rem auto;">
+            <p id="modal-book-synopsis"></p>
+            
+            <h3>Avaliações dos Participantes</h3>
+            <div id="book-reviews"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Current Book Schedule -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cronograma de Leitura - O Lobo da Estepe</h2>
+            <div class="reading-schedule">
+                <h3>Próximo Encontro</h3>
+                <p><strong>Data:</strong> 13 de Dezembro de 2024</p>
+                <p><strong>Hora:</strong> 15:30</p>
+                <p><strong>Local:</strong> Discord - Canal Teia Studios - Sala Créu</p>
+                <p><strong>Capítulos:</strong> Partes I e II completas</p>
+                <p><strong>Meta Atual:</strong> Terminar o Livro</p>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>© 2024 LiteraTeia - Transformando leituras em jornadas</p>
+        <p>© 2024 LiteraTeia - Só para os loucos</p>
     </footer>
 
     <script>
-        document.querySelector('.cta-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Nosso próximo encontro será em breve! Fique atento às nossas mensagens no Zap.');
+        const bookReviews = {
+            '1984': [
+                { name: 'Alex', rating: 5.0, comment: 'Simplesmente genial! Um alerta sobre os perigos da manipulação de informação e perda de liberdade individual.' },
+                { name: 'Ivan', rating: 4.2, comment: 'Denso, mas extremamente importante. Faz a gente pensar sobre liberdade de uma forma completamente nova.' },
+                { name: 'Moises', rating: 4.5, comment: 'Impressionante como um livro escrito décadas atrás consegue ser tão relevante. Uma leitura essencial sobre vigilância e controle.' },
+                { name: 'Natal', rating: 4.8, comment: 'Uma obra profética que ressoa assustadoramente com nossa realidade atual. Orwell captura perfeitamente o perigo dos sistemas totalitários.' }
+            ],
+            'Cem Anos de Solidão': [
+                { name: 'Alex', rating: 4.9, comment: 'Um livro que transcende a literatura. Uma saga familiar que é ao mesmo tempo universal e extremamente particular.' },
+                { name: 'Ivan', rating: 4.5, comment: 'Complexo, poético e fascinante. Uma jornada através da história de uma família e de toda uma região.' },
+                { name: 'Moises', rating: 4.7, comment: 'A forma como o realismo mágico é trabalhado é simplesmente magistral. Cada página é uma experiência única.' },
+                { name: 'Natal', rating: 5.0, comment: 'Uma obra-prima absoluta! Márquez cria um mundo tão rico e mágico que parece mais real que a realidade.' },
+            ],
+            'O Pequeno Príncipe': [
+                { name: 'Alex', rating: 5.0, comment: 'Um livro que todo mundo deveria ler pelo menos uma vez na vida. Uma obra-prima atemporal.' },
+                { name: 'Ivan', rating: 4.4, comment: 'Singelo e ao mesmo tempo complexo. Uma metáfora belíssima sobre humanidade e conexão.' },
+                { name: 'Moises', rating: 4.6, comment: 'Surpreendentemente profundo para um livro aparentemente simples. Cada página é uma reflexão.' },
+                { name: 'Natal', rating: 4.9, comment: 'Uma leitura que nos reconecta com nossa infância e nos lembra dos valores mais puros e simples da vida.' },
+            ]
+        };
+
+        const pastBooks = document.querySelectorAll('.past-book');
+        const bookModal = document.getElementById('bookModal');
+        const closeModal = document.getElementsByClassName('close')[0];
+
+        pastBooks.forEach(book => {
+            book.addEventListener('click', function() {
+                const title = this.getAttribute('data-title');
+                const synopsis = this.getAttribute('data-synopsis');
+                const image = this.getAttribute('data-image');
+
+                document.getElementById('modal-book-title').textContent = title;
+                document.getElementById('modal-book-image').src = image;
+                document.getElementById('modal-book-synopsis').textContent = synopsis;
+
+                const reviews = bookReviews[title] || [
+                    { name: 'Sem Avaliações', rating: 0, comment: 'Não há avaliações disponíveis para este livro.' }
+                ];
+
+                const reviewsContainer = document.getElementById('book-reviews');
+                reviewsContainer.innerHTML = reviews.map(review => `
+                    <div class="review">
+                        <strong>${review.name}</strong> - Nota: ${review.rating}/5
+                        <p>${review.comment}</p>
+                    </div>
+                `).join('');
+
+                bookModal.style.display = 'block';
+            });
         });
+
+        const currentBookBtn = document.getElementById('current-book-btn');
+        const scheduleModal = document.getElementById('scheduleModal');
+        const closeScheduleModal = scheduleModal.getElementsByClassName('close')[0];
+
+        currentBookBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            scheduleModal.style.display = 'block';
+        });
+
+        closeModal.onclick = () => bookModal.style.display = 'none';
+        closeScheduleModal.onclick = () => scheduleModal.style.display = 'none';
+
+        window.onclick = function(event) {
+            if (event.target == bookModal) bookModal.style.display = 'none';
+            if (event.target == scheduleModal) scheduleModal.style.display = 'none';
+        }
     </script>
 </body>
 </html>
