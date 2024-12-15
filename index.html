@@ -14,36 +14,52 @@
             <p>Um grupo onde as histórias ganham vida, onde cada página nos transporta para mundos inexplorados e cada discussão nos transforma.</p>
         </div>
     </div>
-    
+
     <div class="container">
         <section class="book-section">
-            <div class="book-cover">
-                <img src="https://m.media-amazon.com/images/I/812qwlotv+L._SL1500_.jpg" alt="O Lobo da Estepe">
-            </div>
-            <div class="book-info">
-                <h2>O Lobo da Estepe</h2>
-                <p>Nosso primeiro mergulho literário, um romance que desafia os limites da existência humana e explora as profundezas da alma.</p>
-               
-                <h3>Sinopse</h3>
-                <p>Harry Haller, um intelectual solitário, navega entre dois mundos: o da razão civilizada e o do instinto selvagem. Neste romance extraordinário de Hermann Hesse, somos convidados a explorar as contradições internas do ser humano, suas lutas íntimas e a busca por significado em um mundo que parece não compreendê-lo.</p>
-               
-                <a href="#" class="cta-button" id="current-book-btn">Explorar o Livro</a>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <!-- Primeiro Livro -->
+                    <div class="carousel-item">
+                        <div class="book-cover">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1353607889i/6901098.jpg" alt="Meridiano de Sangue">
+                        </div>
+                        <div class="book-info">
+                            <h2>Meridiano de Sangue</h2>
+                            <p>Na nossa segunda leitura no clube LiteraTeia, Meridiano de Sangue nos leva a uma jornada brutal pelo Oeste americano, explorando a violência humana e os limites da civilização.</p>
+                            <h3>Sinopse</h3>
+                            <p>Neste livro o leitor acompanha um rapaz sem nome e sem família, abandonado à própria sorte num mundo brutal em que, para sobreviver, precisa ser tão ou mais violento que seus inimigos. Recrutado por uma companhia de mercenários a serviço de governantes locais, atravessa regiões desérticas entre o México e o Texas da metade do século XIX com a missão de matar o maior número possível de índios e trazer de volta seus escalpos.</p>
+                            <a href="#" class="cta-button" id="current-book-btn">Explorar o Livro</a>
+                        </div>
+                    </div>
+
+                    <!-- Segundo Livro -->
+                    <div class="carousel-item">
+                        <div class="book-cover">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1541890010i/6464663.jpg" alt="Watchmen">
+                        </div>
+                        <div class="book-info">
+                            <h2>Watchmen</h2>
+                            <p>Iniciamos o Cine HQ explorando o impacto dos super-heróis na sociedade. Watchmen é uma narrativa complexa e visualmente impactante que redefine os quadrinhos como forma de arte.</p>
+                            <h3>Sinopse</h3>
+                            <p>Considerado uma obra-prima dos quadrinhos, Watchmen mergulha na psique de seus personagens e nas consequências de seus atos em um mundo à beira da guerra nuclear. O ano é 1985. Os Estados Unidos são uma nação totalitária e fechada, isolada do resto do mundo. A presença de arsenais nucleares e dos chamados super-heróis mantém um certo equilíbrio entre as forças do planeta... até que o relógio do fim do mundo começa a marchar para a meia-noite e a raça humana para um abismo sem-fim.</p>
+                            <a href="#" class="cta-button">Explorar o Livro</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        <!-- Indicadores do Carrossel -->
+        <div class="carousel-indicators">
+            <span class="indicator" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+        </div>
 
         <h2 style="text-align: center; margin-bottom: 1rem; color: var(--primary-color);">Livros Anteriores</h2>
         <div class="past-books">
-            <div class="past-book" data-title="1984" data-synopsis="Um clássico distópico de George Orwell que explora um futuro totalitário onde o governo controla todos os aspectos da vida humana." data-image="https://m.media-amazon.com/images/I/71kxa1-0mUL._SL1500_.jpg">
-                <img src="https://m.media-amazon.com/images/I/81l3pUGbT8L._SL1500_.jpg" alt="1984">
-                <p>1984</p>
-            </div>
-            <div class="past-book" data-title="Cem Anos de Solidão" data-synopsis="Uma obra-prima do realismo mágico de Gabriel García Márquez, narrando a saga da família Buendía em Macondo." data-image="https://m.media-amazon.com/images/I/81J1mMz6IjL._SL1500_.jpg">
-                <img src="https://m.media-amazon.com/images/I/817esPahlrL._SL1500_.jpg" alt="Cem Anos de Solidão">
-                <p>Cem Anos de Solidão</p>
-            </div>
-            <div class="past-book" data-title="O Pequeno Príncipe" data-synopsis="Uma fábula filosófica de Antoine de Saint-Exupéry sobre amor, perda e o verdadeiro significado da vida." data-image="https://m.media-amazon.com/images/I/81hFOvbPPfL._SL1500_.jpg">
-                <img src="https://m.media-amazon.com/images/I/81TmOZIXvzL._SL1500_.jpg" alt="O Pequeno Príncipe">
-                <p>O Pequeno Príncipe</p>
+            <div class="past-book" data-title="O Lobo da Estepe" data-synopsis="Harry Haller, um intelectual solitário, navega entre dois mundos: o da razão civilizada e o do instinto selvagem. Neste romance extraordinário de Hermann Hesse, somos convidados a explorar as contradições internas do ser humano, suas lutas íntimas e a busca por significado em um mundo que parece não compreendê-lo." data-image="https://m.media-amazon.com/images/I/71kxa1-0mUL._SL1500_.jpg">
+                <img src="https://m.media-amazon.com/images/I/812qwlotv+L._SL1500_.jpg" alt="Capa de O Lobo da Estepe">
+                <p>O Lobo da Estepe</p>
             </div>
         </div>
     </div>
@@ -65,14 +81,30 @@
     <div id="scheduleModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Cronograma de Leitura - O Lobo da Estepe</h2>
+            <h2>Cronograma de Leitura - Meridiano de Sangue</h2>
             <div class="reading-schedule">
                 <h3>Próximo Encontro</h3>
-                <p><strong>Data:</strong> 13 de Dezembro de 2024</p>
+                <p><strong>Data:</strong> 20 de Dezembro de 2024</p>
                 <p><strong>Hora:</strong> 15:30</p>
                 <p><strong>Local:</strong> Discord - Canal Teia Studios - Sala Créu</p>
-                <p><strong>Capítulos:</strong> Partes I e II completas</p>
-                <p><strong>Meta Atual:</strong> Terminar o Livro</p>
+                <p><strong>Capítulos:</strong> Capítulo 5</p>
+                <p><strong>Meta Atual:</strong> Iniciar Leitura</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Watchmen Book Schedule -->
+    <div id="watchmenScheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cronograma de Leitura - Watchmen</h2>
+            <div class="reading-schedule">
+                <h3>Próximo Encontro</h3>
+                <p><strong>Data:</strong> 20 de Dezembro de 2024</p>
+                <p><strong>Hora:</strong> 16:00</p>
+                <p><strong>Local:</strong> Discord - Canal Teia Studios - Sala Quadrinhos</p>
+                <p><strong>Capítulos:</strong> Capítulo 1 e 2</p>
+                <p><strong>Meta Atual:</strong> Iniciar Discussão sobre Arco Narrativo</p>
             </div>
         </div>
     </div>
@@ -82,45 +114,75 @@
     </footer>
 
     <script>
+        // Função para desativar a rolagem da página
+        function disableScroll() {
+            document.body.style.overflow = 'hidden';
+        }
+    
+        // Função para ativar a rolagem da página
+        function enableScroll() {
+            document.body.style.overflow = '';
+        }
+    
+        // Função genérica para configurar modais
+        function setupModal(modalTrigger, modal, closeButton) {
+            // Abrir modal
+            modalTrigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.style.display = 'block';
+                disableScroll();
+            });
+    
+            // Fechar modal ao clicar no botão de fechar
+            closeButton.addEventListener('click', function() {
+                modal.style.display = 'none';
+                enableScroll();
+            });
+    
+            // Fechar modal ao clicar fora dele
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    enableScroll();
+                }
+            });
+        }
+    
+        // Dados de avaliações dos livros
         const bookReviews = {
-            '1984': [
-                { name: 'Alex', rating: 5.0, comment: 'Simplesmente genial! Um alerta sobre os perigos da manipulação de informação e perda de liberdade individual.' },
-                { name: 'Ivan', rating: 4.2, comment: 'Denso, mas extremamente importante. Faz a gente pensar sobre liberdade de uma forma completamente nova.' },
-                { name: 'Moises', rating: 4.5, comment: 'Impressionante como um livro escrito décadas atrás consegue ser tão relevante. Uma leitura essencial sobre vigilância e controle.' },
-                { name: 'Natal', rating: 4.8, comment: 'Uma obra profética que ressoa assustadoramente com nossa realidade atual. Orwell captura perfeitamente o perigo dos sistemas totalitários.' }
+            'O Lobo da Estepe': [
+                { name: 'Alex', rating: 4, comment: 'É uma experiência muito imersiva na vida do personagem. O autor coerentemente com a personalidade do protagonista, vaga por diversas outras obras de autores famosos da literatura, além de músicos clássicos. Devido à dualidade que enfrenta o Harry Haller, propõe reflexões muito densas sobre as multifacetadas perspectivas que se pode ter de si mesmo e da sociedade. Tem um final muito interessante, algo que me pegou desprevenido, esperei muitas coisas, exceto a conclusão que teve. Valeu a pena ler, pretendo olhar mais obras desse cabra.' },
+                { name: 'Ivan', rating: 3.5, comment: '' },
+                { name: 'Moises', rating: 5, comment: '' },
+                { name: 'Natal', rating: 3.5, comment: 'Apesar de achar o meio do livro um pouco mais cansativo de ler, fui surpreendido com a leitura no geral. Acompanhado de um grupo dei leitura, acompanhar o personagem desse livro foi uma experiência interessante.' }
             ],
-            'Cem Anos de Solidão': [
-                { name: 'Alex', rating: 4.9, comment: 'Um livro que transcende a literatura. Uma saga familiar que é ao mesmo tempo universal e extremamente particular.' },
-                { name: 'Ivan', rating: 4.5, comment: 'Complexo, poético e fascinante. Uma jornada através da história de uma família e de toda uma região.' },
-                { name: 'Moises', rating: 4.7, comment: 'A forma como o realismo mágico é trabalhado é simplesmente magistral. Cada página é uma experiência única.' },
-                { name: 'Natal', rating: 5.0, comment: 'Uma obra-prima absoluta! Márquez cria um mundo tão rico e mágico que parece mais real que a realidade.' },
-            ],
-            'O Pequeno Príncipe': [
-                { name: 'Alex', rating: 5.0, comment: 'Um livro que todo mundo deveria ler pelo menos uma vez na vida. Uma obra-prima atemporal.' },
-                { name: 'Ivan', rating: 4.4, comment: 'Singelo e ao mesmo tempo complexo. Uma metáfora belíssima sobre humanidade e conexão.' },
-                { name: 'Moises', rating: 4.6, comment: 'Surpreendentemente profundo para um livro aparentemente simples. Cada página é uma reflexão.' },
-                { name: 'Natal', rating: 4.9, comment: 'Uma leitura que nos reconecta com nossa infância e nos lembra dos valores mais puros e simples da vida.' },
-            ]
         };
-
+    
+        // Seleciona todos os livros anteriores
         const pastBooks = document.querySelectorAll('.past-book');
+    
+        // Modal para exibir detalhes dos livros anteriores
         const bookModal = document.getElementById('bookModal');
-        const closeModal = document.getElementsByClassName('close')[0];
-
+        const closeBookModal = bookModal.querySelector('.close');
+    
+        // Adiciona evento de clique para exibir informações no modal de livros anteriores
         pastBooks.forEach(book => {
             book.addEventListener('click', function() {
                 const title = this.getAttribute('data-title');
                 const synopsis = this.getAttribute('data-synopsis');
                 const image = this.getAttribute('data-image');
-
+    
+                // Preenche o modal com os detalhes
                 document.getElementById('modal-book-title').textContent = title;
                 document.getElementById('modal-book-image').src = image;
                 document.getElementById('modal-book-synopsis').textContent = synopsis;
-
+    
+                // Busca as avaliações do livro clicado
                 const reviews = bookReviews[title] || [
                     { name: 'Sem Avaliações', rating: 0, comment: 'Não há avaliações disponíveis para este livro.' }
                 ];
-
+    
+                // Renderiza as avaliações no modal
                 const reviewsContainer = document.getElementById('book-reviews');
                 reviewsContainer.innerHTML = reviews.map(review => `
                     <div class="review">
@@ -128,27 +190,89 @@
                         <p>${review.comment}</p>
                     </div>
                 `).join('');
+            });
+        });
+    
+        // Modal de cronograma de leitura
+        const currentBookBtn = document.getElementById('current-book-btn');
+        const scheduleModal = document.getElementById('scheduleModal');
+        const closeScheduleModal = scheduleModal.querySelector('.close');
 
-                bookModal.style.display = 'block';
+        const watchmenBookBtn = document.querySelector('.carousel-item:nth-child(2) .cta-button');
+        const watchmenScheduleModal = document.getElementById('watchmenScheduleModal');
+        const closeWatchmenScheduleModal = watchmenScheduleModal.querySelector('.close');
+
+        // Setup modal
+        [
+            { trigger: pastBooks[0], modal: bookModal, close: closeBookModal },
+            { trigger: currentBookBtn, modal: scheduleModal, close: closeScheduleModal },
+            { trigger: watchmenBookBtn, modal: watchmenScheduleModal, close: closeWatchmenScheduleModal }
+        ].forEach(({ trigger, modal, close }) => setupModal(trigger, modal, close));
+    
+        // Carrossel
+        const carouselInner = document.querySelector('.carousel-inner');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentIndex = 0;
+
+        // Função para atualizar o carrossel e as bolinhas
+        function updateCarousel(index) {
+            currentIndex = index;
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Atualiza as bolinhas
+            indicators.forEach((indicator, i) => {
+                if (i === currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        // Adiciona o evento de clique nas bolinhas
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                updateCarousel(slideIndex);
             });
         });
 
-        const currentBookBtn = document.getElementById('current-book-btn');
-        const scheduleModal = document.getElementById('scheduleModal');
-        const closeScheduleModal = scheduleModal.getElementsByClassName('close')[0];
+        // Atualiza a bolinha ativa na inicialização
+        updateCarousel(currentIndex);
 
-        currentBookBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            scheduleModal.style.display = 'block';
+        // Suporte a gestos de arraste (swipe)
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselInner.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
         });
 
-        closeModal.onclick = () => bookModal.style.display = 'none';
-        closeScheduleModal.onclick = () => scheduleModal.style.display = 'none';
+        carouselInner.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
 
-        window.onclick = function(event) {
-            if (event.target == bookModal) bookModal.style.display = 'none';
-            if (event.target == scheduleModal) scheduleModal.style.display = 'none';
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50) {
+                // Swipe para a esquerda (avançar)
+                if (currentIndex < indicators.length - 1) {
+                    updateCarousel(currentIndex + 1);
+                }
+            } else if (touchEndX - touchStartX > 50) {
+                // Swipe para a direita (voltar)
+                if (currentIndex > 0) {
+                    updateCarousel(currentIndex - 1);
+                }
+            }
         }
+    
+        // Configurar modais usando a função genérica
+        setupModal(
+            pastBooks[0], // primeiro livro anterior como trigger
+            bookModal, 
+            closeBookModal
+        );
     </script>
 </body>
 </html>
