@@ -335,7 +335,7 @@ footer {
     }
 
     .past-book {
-        width: calc(50% - 1rem);  /* Largura para 2 colunas com gap */
+        width: calc(50% - 1rem);
         max-width: 250px;
     }
 }
